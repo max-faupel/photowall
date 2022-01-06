@@ -28,8 +28,9 @@ class Main extends Component {
         console.log("componentDidMount")
     }
 
-    componentDidUpdate() {
-        alert("re-render")
+    componentDidUpdate(prevProps, prevState) {
+        console.log(prevState.posts)
+        console.log(this.state)
     }
 
     render() {
