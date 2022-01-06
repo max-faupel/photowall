@@ -1,5 +1,5 @@
 import { Component } from "react";
-import PhotoWall from "./PhotWall";
+import PhotoWall from "./PhotoWall";
 import Title from "./Title";
 
 class Main extends Component {
