@@ -36,15 +36,15 @@ class Main extends Component {
     render() {
         return (
             <div>
-                <Router>
-                    <Routes>
-                        <Route exact path="/" element={<div>
-                            <Title text={'photowall'}></Title>
-                            <PhotoWall posts={this.state.posts} onRemovePhoto={this.removePhoto}></PhotoWall>
-                        </div>}></Route>
-                        <Route exact path="/AddPhoto" element={<AddPhoto></AddPhoto>}></Route>
-                    </Routes>
-                </Router>
+                <div>
+                    <Title text={'photowall'}></Title>
+                    <Router>
+                        <Routes>
+                            <Route exact path="/" element={<PhotoWall posts={this.state.posts} onRemovePhoto={this.removePhoto}></PhotoWall>}></Route>
+                            <Route exact path="/AddPhoto" element={<AddPhoto></AddPhoto>}></Route>
+                        </Routes>
+                    </Router>
+                </div>
             </div>)
     }
 }
