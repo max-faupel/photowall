@@ -1,4 +1,6 @@
 import { Component } from "react";
+import { BrowserRouter as Router, Route, Link, Routes } from "react-router-dom";
+import AddPhoto from "./AddPhoto";
 import PhotoWall from "./PhotoWall";
 import Title from "./Title";
 
@@ -34,8 +36,15 @@ class Main extends Component {
     render() {
         return (
             <div>
-                <Title text={'photowall'}></Title>
-                <PhotoWall posts={this.state.posts} onRemovePhoto={this.removePhoto}></PhotoWall>
+                <Router>
+                    <Routes>
+                        <Route exact path="/" element={<div>
+                            <Title text={'photowall'}></Title>
+                            <PhotoWall posts={this.state.posts} onRemovePhoto={this.removePhoto}></PhotoWall>
+                        </div>}></Route>
+                        <Route exact path="/AddPhoto" element={<AddPhoto></AddPhoto>}></Route>
+                    </Routes>
+                </Router>
             </div>)
     }
 }
