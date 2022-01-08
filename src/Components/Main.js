@@ -33,6 +33,14 @@ class Main extends Component {
             posts: state.posts.filter(post => post !== postRemoved)
         }))
     }
+
+    addPhoto(postSubmitted) {
+        console.log(postSubmitted.description)
+        this.setState((state) => ({
+            posts: state.posts.concat([postSubmitted])
+        }))
+    }
+
     render() {
         return (
             <div>
@@ -42,7 +50,10 @@ class Main extends Component {
                             <Title text={'photowall'}></Title>
                             <PhotoWall posts={this.state.posts} onRemovePhoto={this.removePhoto}></PhotoWall>
                         </div>}></Route>
-                        <Route exact path="/AddPhoto" element={<AddPhoto></AddPhoto>}></Route>
+                        <Route exact path="/AddPhoto" element={<AddPhoto onAddPhoto={(addedPost) => {
+                            console.log(addedPost)
+                            this.addPhoto(addedPost)
+                        }}></AddPhoto>}></Route>
                     </Routes>
                 </Router>
             </div>)
