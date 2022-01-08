@@ -8,7 +8,7 @@ function AddPhoto(props) {
         const imageLink = event.target.elements.link.value
         const description = event.target.elements.description.value
         const post = {
-            id: 0,
+            id: Number(new Date()),
             imageLink: imageLink,
             description: description
         }
@@ -18,17 +18,16 @@ function AddPhoto(props) {
         navigate("/")
     }
 
-    return (
-        <div>
-            <h1>Add Photo!</h1>
-            <div className="form">
-                <form onSubmit={handleSubmit}>
-                    <input type="text" placeholder="Link" name="link"></input>
-                    <input type="text" placeholder="Description" name="description"></input>
-                    <button>Post</button>
-                </form>
-            </div>
-        </div>)
+    return <div>
+        <h1>Add Photo!</h1>
+        <div className="form">
+            <form onSubmit={handleSubmit}>
+                <input type="text" placeholder="Link" name="link"></input>
+                <input type="text" placeholder="Description" name="description"></input>
+                <button>Post</button>
+            </form>
+        </div>
+    </div>
 }
 
 export default AddPhoto
