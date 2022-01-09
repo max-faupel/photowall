@@ -1,5 +1,5 @@
 import { Component } from "react";
-import { BrowserRouter as Router, Route, Link, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import AddPhoto from "./AddPhoto";
 import Photo from "./Photo";
 import PhotoWall from "./PhotoWall";
@@ -15,9 +15,9 @@ class Main extends Component {
         return (
             <div>
                 <Router>
+                    <Title text={'photowall'}></Title>
                     <Routes>
                         <Route exact path="/" element={<div>
-                            <Title text={'photowall'}></Title>
                             <PhotoWall {...this.props}></PhotoWall>
                         </div>}></Route>
                         <Route exact path="/AddPhoto" element={<div>

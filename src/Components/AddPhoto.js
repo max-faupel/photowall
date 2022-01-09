@@ -19,7 +19,6 @@ function AddPhoto(props) {
     }
 
     return <div>
-        <h1>Add Photo!</h1>
         <div className="form">
             <form onSubmit={handleSubmit}>
                 <input type="text" placeholder="Link" name="link"></input>
