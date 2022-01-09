@@ -13,7 +13,7 @@ function AddPhoto(props) {
             description: description
         }
         if (description && imageLink) {
-            props.onAddPhoto(post)
+            props.addPost(post)
         }
         navigate("/")
     }

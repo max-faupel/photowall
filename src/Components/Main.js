@@ -18,13 +18,11 @@ class Main extends Component {
                     <Routes>
                         <Route exact path="/" element={<div>
                             <Title text={'photowall'}></Title>
-                            {/* <PhotoWall posts={this.state.posts} onRemovePhoto={this.removePhoto}></PhotoWall> */}
                             <PhotoWall {...this.props}></PhotoWall>
                         </div>}></Route>
-                        {/* <Route exact path="/AddPhoto" element={<AddPhoto onAddPhoto={(addedPost) => {
-                            console.log(addedPost)
-                            this.addPhoto(addedPost)
-                        }}></AddPhoto>}></Route> */}
+                        <Route exact path="/AddPhoto" element={<div>
+                            <AddPhoto {...this.props}></AddPhoto>
+                        </div>}></Route>
                     </Routes>
                 </Router>
             </div>)
