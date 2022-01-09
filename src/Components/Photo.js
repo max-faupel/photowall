@@ -9,7 +9,7 @@ class Photo extends Component {
             <figcaption> <p>{post.description}</p> </figcaption>
             <div className="button-container">
                 <button className="remove-button" onClick={() => {
-                    this.props.onRemovePhoto(post)
+                    this.props.removePost(this.props.index)
                 }}>Remove</button>
             </div>
         </figure>
@@ -17,7 +17,6 @@ class Photo extends Component {
 }
 
 Photo.propTypes = {
-    post: PropTypes.object.isRequired,
-    onRemovePhoto: PropTypes.func.isRequired
+    post: PropTypes.object.isRequired
 }
 export default Photo
