@@ -5,6 +5,10 @@ import PhotoWall from "./PhotoWall";
 import Title from "./Title";
 
 class Main extends Component {
+    componentDidMount() {
+        this.props.startLoadingPosts()
+    }
+
     render() {
         console.log(this.props)
         return (

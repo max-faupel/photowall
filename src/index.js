@@ -5,11 +5,13 @@ import reportWebVitals from './reportWebVitals';
 import './styles/stylesheet.css'
 import { Provider } from 'react-redux';
 import App from './Components/App';
-import { createStore } from 'redux';
+import { applyMiddleware, createStore } from 'redux';
 import postReducer from './redux/reducer';
+import thunk from 'redux-thunk';
+import { database } from './database/config';
 //import store from './redux/store';
 
-const store = createStore(postReducer)
+const store = createStore(postReducer, applyMiddleware(thunk))
 
 ReactDOM.render(
   <Provider store={store}>
